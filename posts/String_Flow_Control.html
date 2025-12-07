@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dinda Gusti Ayu">
+<meta name="dcterms.date" content="2025-01-19">
+
+<title>Applying the concept of String, List and Loops, and Comparison and Flow Control for Chemistry exercises – Chemistry-Physics-Code</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-fd88f952f8a4dbf24311751a27c18c0e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-8024047248f99a355f82e2457e8e59ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-fd88f952f8a4dbf24311751a27c18c0e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Chemistry-Physics-Code</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/dindagustiayu"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/dinda-gusti-ayu-8049a01b0/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#strings-list-and-loops-and-comparison-and-flow-contol" id="toc-strings-list-and-loops-and-comparison-and-flow-contol" class="nav-link active" data-scroll-target="#strings-list-and-loops-and-comparison-and-flow-contol">Strings, List and Loops, and Comparison and Flow Contol</a></li>
+  <li><a href="#key-equation" id="toc-key-equation" class="nav-link" data-scroll-target="#key-equation">Key Equation</a>
+  <ul class="collapse">
+  <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings">1. Strings</a></li>
+  <li><a href="#p3.1" id="toc-p3.1" class="nav-link" data-scroll-target="#p3.1">P3.1</a></li>
+  <li><a href="#p3.2" id="toc-p3.2" class="nav-link" data-scroll-target="#p3.2">P3.2</a></li>
+  <li><a href="#p3.3" id="toc-p3.3" class="nav-link" data-scroll-target="#p3.3">P3.3</a></li>
+  <li><a href="#list-and-loops" id="toc-list-and-loops" class="nav-link" data-scroll-target="#list-and-loops">2. List and Loops</a></li>
+  <li><a href="#p3.4" id="toc-p3.4" class="nav-link" data-scroll-target="#p3.4">P3.4</a></li>
+  <li><a href="#p3.5" id="toc-p3.5" class="nav-link" data-scroll-target="#p3.5">P3.5</a></li>
+  <li><a href="#p3.6" id="toc-p3.6" class="nav-link" data-scroll-target="#p3.6">P3.6</a></li>
+  </ul></li>
+  <li><a href="#comparison-and-flow-control" id="toc-comparison-and-flow-control" class="nav-link" data-scroll-target="#comparison-and-flow-control">3. Comparison and Flow Control</a>
+  <ul class="collapse">
+  <li><a href="#p3.7" id="toc-p3.7" class="nav-link" data-scroll-target="#p3.7">P3.7</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Applying the concept of String, List and Loops, and Comparison and Flow Control for Chemistry exercises</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Pyhton 3</div>
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">Jupyter Notebook</div>
+    <div class="quarto-category">Chemistry</div>
+    <div class="quarto-category">Physics</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dinda Gusti Ayu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 19, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="strings-list-and-loops-and-comparison-and-flow-contol" class="level1">
+<h1>Strings, List and Loops, and Comparison and Flow Contol</h1>
+<p>This work aims to practice physics exercises using <em>strings, list and loops, comparison dan flow control</em> to solve the problem in Python. There are some solutions for tasks in this Python code.</p>
+</section>
+<section id="key-equation" class="level1">
+<h1>Key Equation</h1>
+<ul>
+<li>Density Computations
+<ul>
+<li><span class="math inline">\(\rho=\frac{m}{v}=\frac{nA}{V_{C}N_{A}}\)</span></li>
+</ul></li>
+<li>Avogadro’s number
+<ul>
+<li>6.022 x <span class="math inline">\(10^{23}\)</span>, 1 amu/atom (or molecule) = 1 g/mol</li>
+</ul></li>
+</ul>
+<section id="strings" class="level2">
+<h2 class="anchored" data-anchor-id="strings">1. Strings</h2>
+</section>
+<section id="p3.1" class="level2">
+<h2 class="anchored" data-anchor-id="p3.1">P3.1</h2>
+<p>Produce a nicely formatted list of the values of the physical constants, <em>h</em>, <em>c</em>, <span class="math inline">\(k_{B}\)</span>, <em>R</em>, and <em><span class="math inline">\(N_{A}\)</span></em>, to four significant figures, with their units.</p>
+<div id="a09c5d02-e5b1-4266-a535-876dd14147e0" class="cell" data-execution_count="45">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>h, h_units <span class="op">=</span> <span class="fl">6.62607015e-34</span>, <span class="st">'J.s'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>c, c_units <span class="op">=</span> <span class="dv">299792458</span>, <span class="st">'m.s-1'</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>kB, kB_units <span class="op">=</span> <span class="fl">1.380649e-23</span>, <span class="st">'J.K-1'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>R, R_units <span class="op">=</span> <span class="fl">8.314462618</span>, <span class="st">'J.K.mol-1'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>N_A, N_A_units <span class="op">=</span> <span class="fl">6.02214076e+23</span>, <span class="st">'mol-1'</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> (<span class="ss">f'h = </span><span class="sc">{</span>h<span class="sc">:9.3e}</span><span class="ss"> </span><span class="sc">{</span>h_units<span class="sc">}</span><span class="ch">\t</span><span class="ss">'</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>     <span class="ss">f'c = </span><span class="sc">{</span>c<span class="sc">:9.3e}</span><span class="ss"> </span><span class="sc">{</span>c_units<span class="sc">}</span><span class="ch">\t</span><span class="ss">'</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f'kB = </span><span class="sc">{</span>kB<span class="sc">:9.3e}</span><span class="ss"> </span><span class="sc">{</span>kB_units<span class="sc">}</span><span class="ch">\t</span><span class="ss">'</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>       <span class="ss">f'R = </span><span class="sc">{</span>R<span class="sc">:9.3e}</span><span class="ss"> </span><span class="sc">{</span>R_units<span class="sc">}</span><span class="ch">\t</span><span class="ss">'</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f'N_A = </span><span class="sc">{</span>N_A<span class="sc">:9.3e}</span><span class="ss"> </span><span class="sc">{</span>N_A_units<span class="sc">}</span><span class="ch">\t</span><span class="ss">'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> (<span class="ss">f'h   = </span><span class="sc">{</span>h<span class="sc">:9.3e}{</span>h_units<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f'c   = </span><span class="sc">{</span>c<span class="sc">:9.3e}{</span>c_units<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f'kB  = </span><span class="sc">{</span>kB<span class="sc">:9.3e}{</span>kB_units<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f'R   = </span><span class="sc">{</span>R<span class="sc">:9.3e}{</span>R_units<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f'N_A = </span><span class="sc">{</span>N_A<span class="sc">:9.3e}{</span>N_A_units<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s1)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>h = 6.626e-34 J.s   c = 2.998e+08 m.s-1 kB = 1.381e-23 J.K-1    R = 8.314e+00 J.K.mol-1 N_A = 6.022e+23 mol-1   
+h   = 6.626e-34J.s
+c   = 2.998e+08m.s-1
+kB  = 1.381e-23J.K-1
+R   = 8.314e+00J.K.mol-1
+N_A = 6.022e+23mol-1
+</code></pre>
+</div>
+</div>
+</section>
+<section id="p3.2" class="level2">
+<h2 class="anchored" data-anchor-id="p3.2">P3.2</h2>
+<p>The following variables define some thermodynamic properties of <span class="math inline">\(CO_{2}\)</span> and <span class="math inline">\(H_{2}O\)</span>.</p>
+<div id="80c42dcb-6056-4acb-85d3-2a80de812190" class="cell" data-execution_count="179">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Triple point of CO2 (K, Pa)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>T3_CO2, p3_CO2 <span class="op">=</span> <span class="fl">216.58</span>, <span class="fl">5.185e5</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Entalphy of fusion of CO2 (kJ.mol-1).</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>DfusH_CO2 <span class="op">=</span> <span class="fl">9.019</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Entrophy of fusion os CO2 (J.K-1.mol-1).</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>DfusS_CO2 <span class="op">=</span> <span class="dv">40</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Entalphy of vaporization of CO2 (kJ.mol-1).</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>DvapH_CO2 <span class="op">=</span> <span class="fl">15.326</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Entrophy of vaporization of CO2 (J.K-1.mol-1).</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>DvapS_CO2 <span class="op">=</span> <span class="fl">70.8</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Triple point of H2O (K, Pa)</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>T3_H2O, p3_H2O <span class="op">=</span> <span class="fl">273.16</span>, <span class="fl">611.73</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Entalphy of fusion of H2O (kJ.mol-1).</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>DfusH_H2O <span class="op">=</span> <span class="fl">6.01</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Entrophy of fusion of H2O (J.K-1.mol-1).</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>DfusS_H2O <span class="op">=</span> <span class="fl">22.0</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Entalphy of vaporization of H2O (kJ.mol-1).</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>DvapH_H2O <span class="op">=</span> <span class="fl">40.68</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Entrophy of vaporization of H2O (J.K-1.mol-1).</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>DvapS_H2O <span class="op">=</span> <span class="fl">118.89</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">' '</span><span class="op">*</span><span class="dv">22</span> <span class="op">+</span> <span class="st">'CO2'</span> <span class="op">+</span> <span class="st">' '</span><span class="op">*</span><span class="dv">9</span> <span class="op">+</span> <span class="st">'H20'</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'_'</span><span class="op">*</span><span class="dv">40</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'p3     /pa         '</span>, <span class="ss">f'</span><span class="sc">{</span>p3_CO2<span class="sc">:5.0f}</span><span class="ss">      </span><span class="sc">{</span>p3_H2O<span class="sc">:5.2f}</span><span class="ss">'</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'T3     /K          '</span>, <span class="ss">f'</span><span class="sc">{</span>T3_CO2<span class="sc">:5.2f}</span><span class="ss">      </span><span class="sc">{</span>T3_H2O<span class="sc">:5.2f}</span><span class="ss">'</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'DfusH  /kJ.mol-1   '</span>, <span class="ss">f'</span><span class="sc">{</span>DfusH_CO2<span class="sc">:5.3f}</span><span class="ss">       </span><span class="sc">{</span>DfusH_H2O<span class="sc">:5.3f}</span><span class="ss">'</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'DfusS  /J.K-1.mol-1'</span>, <span class="ss">f'</span><span class="sc">{</span>DfusS_CO2<span class="sc">:4.1f}</span><span class="ss">      </span><span class="sc">{</span>DfusS_H2O<span class="sc">:6.1f}</span><span class="ss">'</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'DvapH  /kJ.mol-1   '</span>, <span class="ss">f'</span><span class="sc">{</span>DvapH_CO2<span class="sc">:5.3f}</span><span class="ss">    </span><span class="sc">{</span>DvapH_H2O<span class="sc">:8.3f}</span><span class="ss">'</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'DvapS  /j.k-1.mol-1'</span>, <span class="ss">f'</span><span class="sc">{</span>DvapS_CO2<span class="sc">:5.1f}</span><span class="ss">       </span><span class="sc">{</span>DvapS_H2O<span class="sc">:5.1f}</span><span class="ss">'</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                      CO2         H20
+________________________________________
+p3     /pa          518500      611.73
+T3     /K           216.58      273.16
+DfusH  /kJ.mol-1    9.019       6.010
+DfusS  /J.K-1.mol-1 40.0        22.0
+DvapH  /kJ.mol-1    15.326      40.680
+DvapS  /j.k-1.mol-1  70.8       118.9</code></pre>
+</div>
+</div>
+</section>
+<section id="p3.3" class="level2">
+<h2 class="anchored" data-anchor-id="p3.3">P3.3</h2>
+<p>Nuclear binding energy and the mass defect. A neutron has a slightly larger mass than the proton. These are often given in terms of an atomic mass unit, where one atomic mass unit (u) is defined as 1/12th the mass of a carbon-12 atom.</p>
+<div id="e9859be2-1a77-427b-85f0-8c8cd69552e7" class="cell" data-execution_count="171">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mass Particle constant, in kg.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>atomic_kg <span class="op">=</span> <span class="fl">1.660540</span> <span class="op">*</span> <span class="dv">10</span> <span class="op">**</span> <span class="op">-</span><span class="dv">27</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>neutron_kg <span class="op">=</span> <span class="fl">1.674929</span> <span class="op">*</span> <span class="dv">10</span> <span class="op">**</span> <span class="op">-</span><span class="dv">27</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>proton_kg <span class="op">=</span> <span class="fl">1.672623</span> <span class="op">*</span> <span class="dv">10</span> <span class="op">**</span> <span class="op">-</span><span class="dv">27</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>electron_kg <span class="op">=</span> <span class="fl">9.109390</span> <span class="op">*</span> <span class="dv">10</span> <span class="op">**</span> <span class="op">-</span><span class="dv">31</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Mass particle, in u.</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>atomic_u <span class="op">=</span> <span class="fl">1.000</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>neutron_u <span class="op">=</span> neutron_kg <span class="op">/</span> atomic_kg </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>proton_u <span class="op">=</span> proton_kg <span class="op">/</span> atomic_kg</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>electron_u <span class="op">=</span> electron_kg <span class="op">/</span> atomic_kg</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Mass particle, in MeV/c2</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>atomic_ev <span class="op">=</span> <span class="fl">931.5</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>neutron_ev <span class="op">=</span> neutron_u <span class="op">*</span> atomic_ev</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>proton_ev <span class="op">=</span> proton_u <span class="op">*</span> atomic_ev</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>electron_ev <span class="op">=</span> electron_u <span class="op">*</span> atomic_ev</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>title <span class="op">=</span> <span class="st">'|'</span> <span class="op">+</span> <span class="st">' '</span><span class="op">*</span><span class="dv">19</span> <span class="op">+</span> <span class="st">'</span><span class="sc">{:43}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="st">'Binding Nuclear Energy'</span>) <span class="op">+</span> <span class="st">'|'</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>line <span class="op">=</span> <span class="st">'+'</span> <span class="op">+</span> <span class="st">'-'</span><span class="op">*</span><span class="dv">16</span> <span class="op">+</span> <span class="st">'+'</span> <span class="op">+</span> (<span class="st">'-'</span><span class="op">*</span><span class="dv">14</span> <span class="op">+</span> <span class="st">'+'</span>)<span class="op">*</span><span class="dv">3</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>row <span class="op">=</span> <span class="st">'|</span><span class="sc">{:&lt;15}</span><span class="st"> |'</span> <span class="op">+</span> <span class="st">' </span><span class="sc">{:12}</span><span class="st"> |'</span><span class="op">*</span><span class="dv">3</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>header <span class="op">=</span> <span class="st">'| </span><span class="sc">{:^14}</span><span class="st"> |'</span>.<span class="bu">format</span>(<span class="st">'Particle'</span>) <span class="op">+</span> (<span class="st">' </span><span class="sc">{:^12}</span><span class="st"> |'</span><span class="op">*</span><span class="dv">3</span>). <span class="bu">format</span>(<span class="st">'Mass (kg)'</span>, <span class="st">'Mass (u)'</span>, <span class="st">'Mass (Mev/c2)'</span>)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'+'</span> <span class="op">+</span> <span class="st">'-'</span><span class="op">*</span>(<span class="bu">len</span>(title)<span class="op">-</span><span class="dv">2</span>) <span class="op">+</span> <span class="st">'+'</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>      title,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>      line,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>      header,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>      line,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>      row.<span class="bu">format</span>(<span class="st">'atomic mass'</span>, atomic_kg, <span class="ss">f'</span><span class="sc">{</span>atomic_u<span class="sc">:8.3f}</span><span class="ss">'</span>, <span class="ss">f'</span><span class="sc">{</span>atomic_ev<span class="sc">:6}</span><span class="ss">'</span>),</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>      row.<span class="bu">format</span>(<span class="st">'neutron'</span>, neutron_kg, <span class="ss">f'</span><span class="sc">{</span>neutron_u<span class="sc">:8.7f}</span><span class="ss">'</span>, <span class="ss">f'</span><span class="sc">{</span>neutron_ev<span class="sc">:8.2f}</span><span class="ss">'</span>),</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>      row.<span class="bu">format</span>(<span class="st">'proton'</span>, proton_kg, <span class="ss">f'</span><span class="sc">{</span>proton_u<span class="sc">:8.7f}</span><span class="ss">'</span>, <span class="ss">f'</span><span class="sc">{</span>proton_ev<span class="sc">:8.2f}</span><span class="ss">'</span>), </span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>      row.<span class="bu">format</span>(<span class="st">'electron'</span>, electron_kg, <span class="ss">f'</span><span class="sc">{</span>electron_u<span class="sc">:8.7f}</span><span class="ss">'</span>, <span class="ss">f'</span><span class="sc">{</span>electron_ev<span class="sc">:8.3f}</span><span class="ss">'</span>),</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>      line,</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>      sep<span class="op">=</span><span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>                                                                   </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+--------------------------------------------------------------+
+|                   Binding Nuclear Energy                     |
++----------------+--------------+--------------+--------------+
+|    Particle    |  Mass (kg)   |   Mass (u)   | Mass (Mev/c2) |
++----------------+--------------+--------------+--------------+
+|atomic mass     |  1.66054e-27 |    1.000     |  931.5       |
+|neutron         | 1.674929e-27 | 1.0086653    |   939.57     |
+|proton          | 1.672623e-27 | 1.0072765    |   938.28     |
+|electron        |  9.10939e-31 | 0.0005486    |    0.511     |
++----------------+--------------+--------------+--------------+</code></pre>
+</div>
+</div>
+</section>
+<section id="list-and-loops" class="level2">
+<h2 class="anchored" data-anchor-id="list-and-loops">2. List and Loops</h2>
+</section>
+<section id="p3.4" class="level2">
+<h2 class="anchored" data-anchor-id="p3.4">P3.4</h2>
+<p>Straight-chain alkanes are hydrocarbons with the general stoichiometric formula <span class="math inline">\(C_{n}H_{2n+2}\)</span>, in which the carbon atoms form a simple shain: for example, butane, <span class="math inline">\(C_{4}H_{10}\)</span> has the structural formula that may be depicted <span class="math inline">\(H_{3}CC_{2}CH_{2}CH_{3}\)</span>. Write a progra, to output the structural formula of such an alkane, given its stoichiometry (assume <span class="math inline">\(n\geq1\)</span>).</p>
+<div id="c50641fb-7ea3-4dae-b93b-48c0cbc28c84" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assume n = 5</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>stoich <span class="op">=</span> <span class="st">'C5H12'</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fragments <span class="op">=</span> stoich.split(<span class="st">'H'</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>nC <span class="op">=</span> <span class="bu">int</span>(fragments[<span class="dv">0</span>][<span class="dv">1</span>:])</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>nH <span class="op">=</span> <span class="bu">int</span>(fragments[<span class="dv">1</span>])</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nH <span class="op">!=</span> <span class="dv">2</span><span class="op">*</span>nC <span class="op">+</span> <span class="dv">2</span>:</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'</span><span class="sc">{}</span><span class="st"> is not alkane!'</span>.<span class="bu">format</span>(atoich))</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'H</span><span class="ch">\u2083</span><span class="st">C'</span>, end<span class="op">=</span><span class="st">''</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(nC<span class="op">-</span><span class="dv">2</span>):</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'-CH</span><span class="ch">\u2082</span><span class="st">'</span>, end<span class="op">=</span><span class="st">''</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'-CH</span><span class="ch">\u2083</span><span class="st">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>H₃C-CH₂-CH₂-CH₂-CH₃</code></pre>
+</div>
+</div>
+</section>
+<section id="p3.5" class="level2">
+<h2 class="anchored" data-anchor-id="p3.5">P3.5</h2>
+<p>Produce a table if the FCC element symbols abd their corresponding atomic radius (nm) and atomic weight (g/mol).</p>
+<div id="b8e81f7b-44a7-4081-8d2d-d8d65377f6ae" class="cell" data-execution_count="40">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>symbols <span class="op">=</span> [<span class="st">'Al'</span>, <span class="st">'Cu'</span>, <span class="st">'Au'</span>, <span class="st">'Pb'</span>, <span class="st">'Ni'</span>, <span class="st">'Pt'</span>, <span class="st">'Ag'</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Atomic_radiuss <span class="op">=</span> [<span class="fl">0.1431</span>, <span class="fl">0.1278</span>, <span class="fl">0.1442</span>, <span class="fl">0.1750</span>, <span class="fl">0.1246</span>, <span class="fl">0.1387</span>, <span class="fl">0.1445</span>]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Atomic_weigth <span class="op">=</span> [<span class="fl">26.981</span>, <span class="fl">63.546</span>, <span class="fl">196.966</span>, <span class="fl">206.14</span>, <span class="fl">58.693</span>, <span class="fl">195.084</span>, <span class="fl">107.868</span>]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>line <span class="op">=</span> <span class="st">'-'</span><span class="op">*</span><span class="dv">52</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(line)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Elements | Atomic Radii (nm) | Atomic weight (g/mol)'</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(line)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(symbols)):</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">' '</span><span class="op">*</span><span class="dv">2</span>, symbols[i], <span class="st">' '</span><span class="op">*</span><span class="dv">5</span>, Atomic_radiuss[i], <span class="st">' '</span><span class="op">*</span><span class="dv">13</span>, Atomic_weigth[i])</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(line)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>----------------------------------------------------
+Elements | Atomic Radii (nm) | Atomic weight (g/mol)
+----------------------------------------------------
+   Al       0.1431               26.981
+----------------------------------------------------
+   Cu       0.1278               63.546
+----------------------------------------------------
+   Au       0.1442               196.966
+----------------------------------------------------
+   Pb       0.175               206.14
+----------------------------------------------------
+   Ni       0.1246               58.693
+----------------------------------------------------
+   Pt       0.1387               195.084
+----------------------------------------------------
+   Ag       0.1445               107.868
+----------------------------------------------------</code></pre>
+</div>
+</div>
+</section>
+<section id="p3.6" class="level2">
+<h2 class="anchored" data-anchor-id="p3.6">P3.6</h2>
+<p>reference: - https://en.wikipedia.org/wiki/Atomic_radii_of_the_elements_(data_page)</p>
+<p>Alumunium, copper and lead has an atomic radius of 121, 132, and 146 nm, respectively, an FCC crystal structure, and atomic weight of 26.98, 63.55, and 207.20 g/mol. Compute their theoritical density,and compare the answer with their measured density.</p>
+<p><strong>Face centered cubic (fcc) structure</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="String_Flow_Control_files/figure-html/3184a253-0d41-41f2-afbe-c8574e32c2d1-1-270792ba-3ad5-4f1a-9b11-94e5a4b800ba.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<p><em>Credit: Callister &amp; Rethwisch</em></p>
+<p>in the FCC unit cell illustrated, the atoms touch one another across a face-diagonal, the length of which is <em>4R</em>. Because the unit cell is a cube, its volume is <span class="math inline">\(a^{3}\)</span>, where <em>a</em> is the cell edge length. From the right triangle on the face.</p>
+<p><span class="math inline">\(a^{2} + a^{2} = (4R)^{2}\)</span></p>
+<p>Solving for a,</p>
+<p><span class="math inline">\(a=2R\sqrt{2}\)</span></p>
+<p>The FCC unit cell volume <span class="math inline">\(V_{C}\)</span> may be computed from</p>
+<p><span class="math inline">\(V_{C}=a^{3}=(2\sqrt{2})^{3}=16R^{3}\sqrt{2}\)</span></p>
+<div id="a567ea88-47cf-4aa7-9df5-9e837a0d18f4" class="cell" data-execution_count="42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Avogadro's number , in atoms/mol.</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>NA <span class="op">=</span> <span class="fl">6.022</span> <span class="op">*</span> <span class="dv">10</span> <span class="op">**</span><span class="dv">23</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># The number of atoms per unit cell in FCC</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># The atomic weight, and Radii of atoms (use floats/ints instead of strings)</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>Atomics <span class="op">=</span> [<span class="st">'Al'</span>, <span class="st">'Cu'</span>, <span class="st">'Pb'</span>] <span class="co"># use string ' '</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>A_weight <span class="op">=</span> [<span class="fl">26.98</span>, <span class="fl">63.55</span>, <span class="fl">207.20</span>] <span class="co"># atomic weights in g/mol use float</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>Radii <span class="op">=</span> [<span class="dv">143</span> <span class="op">*</span> <span class="dv">10</span> <span class="op">**-</span><span class="dv">10</span>, <span class="dv">128</span> <span class="op">*</span> <span class="dv">10</span> <span class="op">**-</span><span class="dv">10</span>, <span class="dv">180</span> <span class="op">*</span> <span class="dv">10</span> <span class="op">**-</span><span class="dv">10</span>] <span class="co"># radii in cm (converted from pm) use float/integers</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Computational density</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> atom, weight, radius <span class="kw">in</span> <span class="bu">zip</span>(Atomics, A_weight, Radii):</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    V_cell <span class="op">=</span> <span class="dv">16</span> <span class="op">*</span> (radius<span class="op">**</span><span class="dv">3</span>) <span class="op">*</span> np.sqrt(<span class="dv">2</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    m_cell <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> weight</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    rho <span class="op">=</span> m_cell <span class="op">/</span> (V_cell <span class="op">*</span>NA)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f" </span><span class="sc">{</span>atom<span class="sc">}</span><span class="ss">: V_cell=</span><span class="sc">{</span>V_cell<span class="sc">:.3e}</span><span class="ss"> cm^3, m_cell=</span><span class="sc">{</span>m_cell<span class="sc">:.3e}</span><span class="ss"> g, rho=</span><span class="sc">{</span>rho<span class="sc">:.3f}</span><span class="ss"> g/cm^3"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Al: V_cell=6.617e-23 cm^3, m_cell=1.079e+02 g, rho=2.708 g/cm^3
+ Cu: V_cell=4.745e-23 cm^3, m_cell=2.542e+02 g, rho=8.895 g/cm^3
+ Pb: V_cell=1.320e-22 cm^3, m_cell=8.288e+02 g, rho=10.429 g/cm^3</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="comparison-and-flow-control" class="level1">
+<h1>3. Comparison and Flow Control</h1>
+Table. Python comparison operators
+<div style="width:60%; margin:auto;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Symbols</strong></th>
+<th style="text-align: center;"><strong>meaning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">==</td>
+<td style="text-align: center;">Equal to</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">!=</td>
+<td style="text-align: center;">Not equal to</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">&gt;</td>
+<td style="text-align: center;">Greater than</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">&lt;</td>
+<td style="text-align: center;">Less than</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">&gt;=</td>
+<td style="text-align: center;">Greater than or equal to</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">&lt;=</td>
+<td style="text-align: center;">Less than or equal to</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="p3.7" class="level2">
+<h2 class="anchored" data-anchor-id="p3.7">P3.7</h2>
+<p>Determine whether each of the following electron configuration is an inert gas,a halogen, an alkali metal, an alkaline earth metal, or transition metal. Justify your choices.</p>
+<pre><code>(a) 1s2.2s2.2p6.3s2.3p5
+(b) 1s2.2s2.2p6.3s2.3p6.3d7.4s2
+(c) 1s2.2s2.2p6.3s2.3p6.3d7.4s2.4P6
+(d) 1s2.2s2.2p6.3s2.3p6.4s1
+(e) 1s2.2s2.2p6.3s2.3p6.3d7.4s2.4p6.4d10.5s2
+(f) 1s2.2s2.2p6.3s2</code></pre>
+<div id="ca1d87b8-442f-4bef-b900-ff376300bef2" class="cell" data-execution_count="151">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Electron configuration</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>configs <span class="op">=</span> {</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'(a)'</span>: <span class="st">'1s2.2s2.2p6.3s2.3p5'</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'(b)'</span>: <span class="st">'1s2.2s2.2p6.3s2.3p6.3d7.4s2'</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'(c)'</span>: <span class="st">'1s2.2s2.2p6.3s2.3p6.3d10.4s2.4p6'</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'(d)'</span>: <span class="st">'1s2.2s2.2p6.3s2.3p6.4s1'</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'(e)'</span>: <span class="st">'1s2.2s2.2p6.3s2.3p6.3d7.4s2.4p6.4d5.5s2'</span>,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'(f)'</span>: <span class="st">'1s2.2s2.2p6.3s2'</span>}</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> classify_configuration(cfg: <span class="bu">str</span>):</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    subshells <span class="op">=</span> cfg.split(<span class="st">"."</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    parsed <span class="op">=</span> []</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Parse subshells into (n, orbital, electrons)</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> s <span class="kw">in</span> subshells:</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>            n <span class="op">=</span> <span class="bu">int</span>(s[<span class="dv">0</span>])          <span class="co"># principal quantum number</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>            orbital <span class="op">=</span> s[<span class="dv">1</span>]         <span class="co"># orbital type (s, p, d, f)</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>            electrons <span class="op">=</span> <span class="bu">int</span>(s[<span class="dv">2</span>:]) <span class="co"># electron count</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>            parsed.append((n, orbital, electrons))</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> parsed:</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Unknown"</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Classify configuration electron by the last and the second-last subshells</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    last_orbital, last_e <span class="op">=</span> parsed[<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>], parsed[<span class="op">-</span><span class="dv">1</span>][<span class="dv">2</span>]</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>    second_orbital, second_e <span class="op">=</span> parsed[<span class="op">-</span><span class="dv">2</span>][<span class="dv">1</span>], parsed[<span class="op">-</span><span class="dv">2</span>][<span class="dv">2</span>] <span class="cf">if</span> <span class="bu">len</span>(parsed) <span class="op">&gt;=</span> <span class="dv">2</span> <span class="cf">else</span> (<span class="va">None</span>, <span class="va">None</span>)</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Rules</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> last_orbital <span class="op">==</span> <span class="st">"p"</span> <span class="kw">and</span> last_e <span class="op">==</span> <span class="dv">6</span>:</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Inert gas (Noble gas)"</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> last_orbital <span class="op">==</span> <span class="st">"p"</span> <span class="kw">and</span> last_e <span class="op">==</span> <span class="dv">5</span>:</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Halogen"</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> last_orbital <span class="op">==</span> <span class="st">"s"</span> <span class="kw">and</span> last_e <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Alkali metal"</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> last_orbital <span class="op">==</span> <span class="st">"s"</span> <span class="kw">and</span> last_e <span class="op">==</span><span class="dv">2</span>:</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> second_orbital <span class="op">==</span> <span class="st">"p"</span> <span class="kw">and</span> second_e <span class="op">==</span> <span class="dv">6</span>:</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"Akaline Earth metal"</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> second_orbital <span class="op">==</span><span class="st">"d"</span> <span class="kw">and</span> second_e <span class="op">&lt;</span><span class="dv">10</span>:</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"Transition metal"</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a><span class="co"># print results</span></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label, cfg <span class="kw">in</span> configs.items():</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>label<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>cfg<span class="sc">}</span><span class="ss"> =&gt; </span><span class="sc">{</span>classify_configuration(cfg)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(a) 1s2.2s2.2p6.3s2.3p5 =&gt; Halogen
+(b) 1s2.2s2.2p6.3s2.3p6.3d7.4s2 =&gt; Transition metal
+(c) 1s2.2s2.2p6.3s2.3p6.3d10.4s2.4p6 =&gt; Inert gas (Noble gas)
+(d) 1s2.2s2.2p6.3s2.3p6.4s1 =&gt; Alkali metal
+(e) 1s2.2s2.2p6.3s2.3p6.3d7.4s2.4p6.4d5.5s2 =&gt; Transition metal
+(f) 1s2.2s2.2p6.3s2 =&gt; Akaline Earth metal</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/github\.com\/dindagustiayu\/Chemistry-Physics-Code\.git");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
