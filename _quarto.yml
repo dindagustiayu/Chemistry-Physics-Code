@@ -1,0 +1,31 @@
+project:
+  type: website
+  
+website:
+  site-url: https://github.com/dindagustiayu/Chemistry-Physics-Code.git
+  title: "Chemistry-Physics-Code"
+  navbar:
+    right:
+      - text: 'Resources'
+        menu:
+          - text: 'Scientific Python'
+            href: https://www.christianhill.co.uk/
+            target: -blank
+          - text: 'Python-bloggers'
+            href: https://python-bloggers.com/
+            target: -blank
+      - icon: github
+        href: https://github.com/dindagustiayu
+      - icon: linkedin
+        href: https://linkedin.com/in/dinda-gusti-ayu-8049a01b0/
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+    toc: true
+    fontsize: medium
+metadata:
+    author: "Dinda Gusti Ayu"
+    language: en
